@@ -1,0 +1,142 @@
+//task hello << {
+//    println "Hello !!!!"
+//}
+//
+//task greet << {
+//    println "Welcome Mr. X"
+//}
+//
+//
+//task intro(dependsOn: hello) << {
+//    println "I'm Gradle"
+//}
+//
+//hello << { println "Hello extended!!!!" }
+//
+//greet.dependsOn hello, intro
+//
+
+/*task one  { println "one hkhgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg" }
+task two 
+        {
+
+            println "hello jackal"
+           
+            doLast 
+                    { 
+                         println "two "
+                    }
+
+        }*/
+
+/*two
+        {
+
+            println("hello")
+            
+        }*/
+
+
+/*
+//task testr { println "sfskfh" }
+//testr.dependsOn one, two 
+*/
+apply plugin: "java"
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java' , 'src/main/java2']
+        }
+    }
+}
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'newfile1'
+        )
+    }
+}
+
+sourceSets {
+    main {
+        
+        resources {
+            srcDirs = ['src/main/resources']
+            exclude 'file1.txt'
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*repositories {
+    jcenter()
+    maven{
+        url "https://mvnrepository.com/artifact/org.apache.commons/commons-lang3"
+    }
+}
+
+dependencies {
+    compile group : 'org.apache.commons' , name : 'commons-lang3' , version : '3.8.1'
+}
+
+jar {
+    manifest {
+        attributes(
+                "Main-Class": "newfile1"
+        )
+        from {
+            configurations.compile.collect{ it.isDirectory() ? it : zipTree(it)}
+        }
+    }
+}*/
+
+
+
+
+
+
+
+
+
+
+/*
+repositories {
+    jcenter()
+    mavenCentral()
+    maven{
+        url
+        "https://mvnrepository.com/artifact/org.apache.commons/commons-lang3"
+    }
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+apply from : "/home/ttn/gradlesessions/my_tasks.gradle"
+
+
+
+
+
+
+
+
